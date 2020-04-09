@@ -10,10 +10,24 @@ import UIKit
 
 class ViewController: UIViewController {
 
+    private var userList = [User]()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
+        
+        UserRepo.startListener { () in
+            
+            if let user = self.userList.first{
+                print(user.password)
+                
+            }
+            //print("\(self.userList.first.id)")
+        }
+        
+        
     }
+    
 
 
 }

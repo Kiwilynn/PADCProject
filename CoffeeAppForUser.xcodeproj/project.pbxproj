@@ -14,7 +14,8 @@
 		4C05F7BB243F241B00EAD78C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4C05F7BA243F241B00EAD78C /* Assets.xcassets */; };
 		4C05F7BE243F241B00EAD78C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4C05F7BC243F241B00EAD78C /* LaunchScreen.storyboard */; };
 		4C05F7C6243F244D00EAD78C /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 4C05F7C5243F244D00EAD78C /* GoogleService-Info.plist */; };
-		4C05F7CA243F28C700EAD78C /* FirebaseRepo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C05F7C9243F28C700EAD78C /* FirebaseRepo.swift */; };
+		4C05F7CA243F28C700EAD78C /* UserRepo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C05F7C9243F28C700EAD78C /* UserRepo.swift */; };
+		4C05F7CC243F2E1F00EAD78C /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C05F7CB243F2E1F00EAD78C /* User.swift */; };
 		E4A7FC54647BA5360DF809D3 /* Pods_CoffeeAppForUser.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A9C76BFA610EC3242392FCF3 /* Pods_CoffeeAppForUser.framework */; };
 /* End PBXBuildFile section */
 
@@ -29,7 +30,8 @@
 		4C05F7BD243F241B00EAD78C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		4C05F7BF243F241B00EAD78C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4C05F7C5243F244D00EAD78C /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
-		4C05F7C9243F28C700EAD78C /* FirebaseRepo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseRepo.swift; sourceTree = "<group>"; };
+		4C05F7C9243F28C700EAD78C /* UserRepo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = UserRepo.swift; path = CoffeeAppForUser/Repository/UserRepo.swift; sourceTree = SOURCE_ROOT; };
+		4C05F7CB243F2E1F00EAD78C /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		735012AB88A792925AB260CC /* Pods-CoffeeAppForUser.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CoffeeAppForUser.debug.xcconfig"; path = "Target Support Files/Pods-CoffeeAppForUser/Pods-CoffeeAppForUser.debug.xcconfig"; sourceTree = "<group>"; };
 		A9C76BFA610EC3242392FCF3 /* Pods_CoffeeAppForUser.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CoffeeAppForUser.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -84,6 +86,7 @@
 		4C05F7C7243F255B00EAD78C /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				4C05F7CB243F2E1F00EAD78C /* User.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -91,7 +94,7 @@
 		4C05F7C8243F256300EAD78C /* Repository */ = {
 			isa = PBXGroup;
 			children = (
-				4C05F7C9243F28C700EAD78C /* FirebaseRepo.swift */,
+				4C05F7C9243F28C700EAD78C /* UserRepo.swift */,
 			);
 			path = Repository;
 			sourceTree = "<group>";
@@ -229,9 +232,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4C05F7CA243F28C700EAD78C /* FirebaseRepo.swift in Sources */,
+				4C05F7CA243F28C700EAD78C /* UserRepo.swift in Sources */,
 				4C05F7B6243F241A00EAD78C /* ViewController.swift in Sources */,
 				4C05F7B2243F241A00EAD78C /* AppDelegate.swift in Sources */,
+				4C05F7CC243F2E1F00EAD78C /* User.swift in Sources */,
 				4C05F7B4243F241A00EAD78C /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
