@@ -27,10 +27,13 @@ class CoffeeShopRepo{
                     let map = doc.data()
                     
                     let name = map["name"] as! String
-                    let annotationDescription = map["marker_description"] as! String
+                    let markerDescription = map["marker_description"] as! String
                     let geoPoint = map["coordinates"] as! GeoPoint
                     
-                    let annotation = mapDataAdapter(title: name, subtitle: annotationDescription, geoPoint: geoPoint)
+                    
+                    // FOR NOW THE SUBTITLE ON THE MARKER WILL BE THE DOC ID
+                    // WE NEED TO FIX THIS LATER
+                    let annotation = mapDataAdapter(id: doc.documentID, title: name, subtitle: doc.documentID, geoPoint: geoPoint)
                     
                     let coffeeShop = CoffeeShop(id: doc.documentID, name: name, marker: annotation)
                     
@@ -41,7 +44,7 @@ class CoffeeShopRepo{
         }
     }
     
-    static func mapDataAdapter(title: String, subtitle: String, geoPoint: GeoPoint) -> MKPointAnnotation{
+    static func mapDataAdapter(id: String, title: String, subtitle: String, geoPoint: GeoPoint) -> MKPointAnnotation {
         let annotation = MKPointAnnotation()
         
         annotation.title = title

@@ -17,6 +17,8 @@ class ViewControllerWithMap: UIViewController {
     private let locationManager = CLLocationManager() // core location manager used to query for gps data
     private let regionInMeters: Double = 10000 // how much we wan't the map to be zoomed in
     
+    private var selectedMarker: MKPointAnnotation?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -108,31 +110,49 @@ class ViewControllerWithMap: UIViewController {
     
     // centers the view on the user location
     func centerViewOnUserLocation(){
+
+        // unwraps the optional (user locations coordinates)
         if let location = locationManager.location?.coordinate {
-            let region = MKCoordinateRegion.init(center: location, latitudinalMeters: regionInMeters, longitudinalMeters: regionInMeters)
+            
+            // sets the region
+            let region = MKCoordinateRegion(center: location, latitudinalMeters: regionInMeters, longitudinalMeters: regionInMeters)
+            
+            // sets the region on the map with our newly created region
             map.setRegion(region, animated: true)
         }
     }
     
+    // function that gets called every time the listener receives new data
     func updateMarkersOnMap(){
-        // CHECK EFFECIENCY:
-        /*
-        map.removeAnnotations(map.annotations)
         
-        for coffeeShop in CoffeeShopRepo.coffeeShopList{
-            map.addAnnotation(coffeeeShop.marker)
-        }*/
-        
+        // creates a list of markers
         var markers = [MKPointAnnotation]()
         
+        // adds all the markers from the new list of coffeeshops
         for coffeeShop in CoffeeShopRepo.coffeeShopList{
             markers.append(coffeeShop.marker)
         }
         
+        // removes the annotations that is already on the map
         map.removeAnnotations(map.annotations)
+        
+        // adds the new annotations to the map
         map.addAnnotations(markers)
     }
     
+ // MARK: - Navigation
+
+    // In a storyboard-based application, you will often want to do a little preparation before navigation
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        // Get the new view controller using segue.destination.
+        // Pass the selected object to the new view controller.
+        
+        if let segueDestination = segue.destination as? ViewControllerMenuForShop{
+            if let marker = selectedMarker{
+                segueDestination.collectionID = marker.subtitle
+            }
+        }
+    }
 }
 
 extension ViewControllerWithMap: MKMapViewDelegate{
@@ -154,23 +174,27 @@ extension ViewControllerWithMap: MKMapViewDelegate{
             annotationView = MKMarkerAnnotationView(annotation: annotation, reuseIdentifier: identifier)
             
             annotationView?.canShowCallout = true
-            annotationView?.rightCalloutAccessoryView = UIButton(type: .detailDisclosure) // Delete button for annotation
+            annotationView?.rightCalloutAccessoryView = UIButton(type: .detailDisclosure) // Details button for annotation
         // if there is one available we reuse it and fills it with data
         }else{
             annotationView?.annotation = annotation
         }
         
-        // returns the styles annotation
+        // returns the styled annotation
         return annotationView
         
     }
     
+    func mapView(_ mapView: MKMapView, didSelect view: MKAnnotationView) {
+        selectedMarker = view.annotation as? MKPointAnnotation
+        
+    }
     
     // This function is called when you press the button on an annotation
     func mapView(_ mapView: MKMapView, annotationView view: MKAnnotationView, calloutAccessoryControlTapped control: UIControl) {
-        
-        // do something
-        
+                
+        // performs the segue to a new view controller with the menu for the coffeeshop
+        performSegue(withIdentifier: "showDetail", sender: nil)
     }
 }
 
