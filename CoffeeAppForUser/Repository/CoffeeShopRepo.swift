@@ -13,7 +13,7 @@ import MapKit
 class CoffeeShopRepo{
     
     private static let db = Firestore.firestore()
-    private static let collectionName = "annotations"
+    private static let collectionName = "coffeeshop"
     
     static var coffeeShopList = [CoffeeShop]()
     
@@ -26,13 +26,13 @@ class CoffeeShopRepo{
                 for doc in snap.documents{
                     let map = doc.data()
                     
-                    let title = map["title"] as! String
-                    let subtitle = map["subtitle"] as! String
+                    let name = map["name"] as! String
+                    let annotationDescription = map["marker_description"] as! String
                     let geoPoint = map["coordinates"] as! GeoPoint
                     
-                    let annotation = mapDataAdapter(title: title, subtitle: subtitle, geoPoint: geoPoint)
+                    let annotation = mapDataAdapter(title: name, subtitle: annotationDescription, geoPoint: geoPoint)
                     
-                    let coffeeShop = CoffeeShop(id: doc.documentID, marker: annotation)
+                    let coffeeShop = CoffeeShop(id: doc.documentID, name: name, marker: annotation)
                     
                     self.coffeeShopList.append(coffeeShop)
                 }

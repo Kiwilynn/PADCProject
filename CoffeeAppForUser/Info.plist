@@ -6,6 +6,10 @@
 	<string>$(DEVELOPMENT_LANGUAGE)</string>
 	<key>CFBundleExecutable</key>
 	<string>$(EXECUTABLE_NAME)</string>
+	<key>NSLocationUsageDescription</key>
+	<string>To be able to find a coffeeshop nearby, the app needs access to location services</string>
+	<key>NSLocationWhenInUseUsageDescription</key>
+	<string>To be able to find a coffeeshop nearby, the app needs access to location services</string>
 	<key>CFBundleIdentifier</key>
 	<string>$(PRODUCT_BUNDLE_IDENTIFIER)</string>
 	<key>CFBundleInfoDictionaryVersion</key>
