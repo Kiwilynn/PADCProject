@@ -22,13 +22,15 @@ $(document).ready( () => {
   //USER STORY C1 - 15-05-2020
   $("#addItem-button").click( () => {
     
+    // object we enter data into
     let newItem = {
       id : 20,
       NAME : $("#name").val(),
       PRICE : $("#price").val(),
     };
     
-    let items = $("#item-box").length + 1;
+    // goes trough list of items and adds to bottom of list 
+    let showItems = $("#item-box").length + 1;
     $("#item-box").last().append(
       `<div id = item-box>
       Id:          ${newItem.id}<br>
@@ -38,7 +40,7 @@ $(document).ready( () => {
 
     console.log(newItem);
     items.push(newItem);
-    console.log(items);
+    console.log(showItems);
     
     
   });
