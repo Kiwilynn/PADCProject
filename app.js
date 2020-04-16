@@ -24,7 +24,6 @@ app.get(("/itemPage"), (req, res) => {
 
 
 
-
 // import routes 
 const firebaseRoute = require("./routes/firebase.js");
 //set up routes with our server

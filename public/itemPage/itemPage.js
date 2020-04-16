@@ -10,7 +10,6 @@ $(document).ready( () => {
     { id: "6", NAME: "Water", PRICE: 1230}
   ];
   
-  
   $.each(items, function () {      
     $(`<div id = item-box>
       Id:          ${this.id}<br>
@@ -30,7 +29,7 @@ $(document).ready( () => {
     };
     
     // goes trough list of items and adds to bottom of list 
-    let showItems = $("#item-box").length + 1;
+    $("#item-box").length + 1;
     $("#item-box").last().append(
       `<div id = item-box>
       Id:          ${newItem.id}<br>
@@ -40,11 +39,8 @@ $(document).ready( () => {
 
     console.log(newItem);
     items.push(newItem);
-    console.log(showItems);
-    
     
   });
-
 
 });
 
