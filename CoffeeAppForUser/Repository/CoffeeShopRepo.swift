@@ -44,6 +44,8 @@ class CoffeeShopRepo{
         }
     }
     
+    // old way
+    /*
     static func mapDataAdapter(id: String, title: String, subtitle: String, geoPoint: GeoPoint) -> MKPointAnnotation {
         let annotation = MKPointAnnotation()
         
@@ -53,5 +55,16 @@ class CoffeeShopRepo{
         
         return annotation
         
+    }*/
+    
+    
+    static func mapDataAdapter(id: String, title: String, subtitle: String, geoPoint: GeoPoint) -> CoffeeShopAnnotation {
+        
+        let coordinate = CLLocationCoordinate2D(latitude: geoPoint.latitude, longitude: geoPoint.longitude)
+        
+        let annotation = CoffeeShopAnnotation(coordinate: coordinate, name: title)
+        
+        return annotation
     }
+    
 }

@@ -26,11 +26,9 @@ class ViewControllerMenuForShop: UIViewController{
             ProductRepo.startListener(id: id){ () -> () in
                 self.tableView.reloadData()
                 
-                
             }
         }
     }
-
 }
 
 extension ViewControllerMenuForShop: UITableViewDelegate, UITableViewDataSource{
@@ -46,7 +44,5 @@ extension ViewControllerMenuForShop: UITableViewDelegate, UITableViewDataSource{
         
         return cell
     }
-    
-    
     
 }
