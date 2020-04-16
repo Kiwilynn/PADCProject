@@ -22,29 +22,16 @@
 
 
     //USER STORY C1 - 15-05-2020
-    $("#form").click(function(){
-
-      let item = {
-        name,
-        price
-      } 
-
-      name = $("#name").val
-      PRICE = $("#price").val
-
-      items.push($("#form").push(item));
-      items.appendTo
-      console.log(item)
-    });
-    
-
-
+  
     $('#addItem-button').on('click',function () {
       var newItem = {
+          id : 20,
           name : $name.val(),
           price : $price.val(),
       };
+      console.log(newItem)
       items.appendTo(newItem)
+
       
   })
 
