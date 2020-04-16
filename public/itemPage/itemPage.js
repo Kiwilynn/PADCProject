@@ -8,6 +8,7 @@
         { id: "3", NAME: "Kaffe Latte", PRICE: 30},
         { id: "4", NAME: "Hot Chocolate", PRICE: 38},
         { id: "5", NAME: "Filter Kaffe", PRICE: 10},
+        { id: "6", NAME: "Water", PRICE: 1230}
       ];
     
   
@@ -20,17 +21,18 @@
         ).appendTo("#item-box");        
     });
 
-
     //USER STORY C1 - 15-05-2020
   
     $('#addItem-button').on('click',function () {
+
       var newItem = {
           id : 20,
-          name : $name.val(),
-          price : $price.val(),
+          NAME : $("#name").val(),
+          PRICE : $("#price").val(),
       };
       console.log(newItem)
-      items.appendTo(newItem)
+      items.push(newItem)
+      console.log(items)
 
       
   })
