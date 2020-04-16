@@ -12,9 +12,9 @@ class Product{
     
     var id: String
     var name: String
-    var price: String
+    var price: Double
     
-    init(id: String, name: String, price: String){
+    init(id: String, name: String, price: Double){
         self.id = id
         self.name = name
         self.price = price

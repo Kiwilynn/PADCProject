@@ -28,7 +28,7 @@ class ProductRepo{
                     let map = doc.data()
                     
                     let name = map["name"] as! String
-                    let price = map["price"] as! String
+                    let price = map["price"] as! Double 
                     
                     print("NAME: \(name)")
                     print("PRICE: \(price)")

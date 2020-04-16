@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0512392024464275008B8F99 /* Order.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0512391F24464275008B8F99 /* Order.swift */; };
 		4C05F7B2243F241A00EAD78C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C05F7B1243F241A00EAD78C /* AppDelegate.swift */; };
 		4C05F7B4243F241A00EAD78C /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C05F7B3243F241A00EAD78C /* SceneDelegate.swift */; };
 		4C05F7B6243F241A00EAD78C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C05F7B5243F241A00EAD78C /* ViewController.swift */; };
@@ -26,6 +27,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0512391F24464275008B8F99 /* Order.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Order.swift; sourceTree = "<group>"; };
 		243496708E4DBE7D76B74CF4 /* Pods-CoffeeAppForUser.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CoffeeAppForUser.release.xcconfig"; path = "Target Support Files/Pods-CoffeeAppForUser/Pods-CoffeeAppForUser.release.xcconfig"; sourceTree = "<group>"; };
 		4C05F7AE243F241A00EAD78C /* CoffeeAppForUser.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CoffeeAppForUser.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4C05F7B1243F241A00EAD78C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -101,6 +103,7 @@
 				4C05F7CB243F2E1F00EAD78C /* User.swift */,
 				4C38A2352445BEB1004E50CB /* CoffeeShop.swift */,
 				4C38A23B2445EF35004E50CB /* Product.swift */,
+				0512391F24464275008B8F99 /* Order.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -264,6 +267,7 @@
 				4C05F7B6243F241A00EAD78C /* ViewController.swift in Sources */,
 				4C38A23A2445EE5D004E50CB /* ViewControllerMenuForShop.swift in Sources */,
 				4C38A2362445BEB1004E50CB /* CoffeeShop.swift in Sources */,
+				0512392024464275008B8F99 /* Order.swift in Sources */,
 				4C05F7B2243F241A00EAD78C /* AppDelegate.swift in Sources */,
 				4C05F7CC243F2E1F00EAD78C /* User.swift in Sources */,
 				4C38A23C2445EF35004E50CB /* Product.swift in Sources */,
