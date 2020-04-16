@@ -18,6 +18,12 @@ app.get(("/frontpage.js"), (req, res) => {
     return res.sendFile(__dirname + "/public/frontpage/frontpage.js");
 });
 
+app.get(("/itemPage"), (req, res) => {
+    return res.sendFile(__dirname + "/public/itemPage/itemPage.html");
+});
+
+
+
 
 // import routes 
 const firebaseRoute = require("./routes/firebase.js");
