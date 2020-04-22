@@ -10,26 +10,32 @@ admin.initializeApp({
 });
 
 const db = admin.firestore();
-const docRef = db.collection("coffee").doc();
 
 
 //test route for database 
-router.get("/test", (req, res) =>{
-    // sends data to database
-    let setCoffee = docRef.set({title: "test fra node 09/04"});
-    
-    // For loop goes thorugh our collection list and displays them in log. 
-    db.collection('coffee').get()
-    .then((snapshot) => {
-      snapshot.forEach((doc) => {
-        console.log(doc.id, '=>', doc.data());
-        
-      });
-    })
-    .catch((err) => {
-      console.log('Error getting documents', err);
+router.get("/testGet", (req, res) => {    
+  // For loop goes through the collection list and displays them all. 
+  db.collection('orders').get().then((snapshot) => {
+    let getCoffee = snapshot.docs.map((doc) => {
+      return doc.data();
     });
-        
+    console.log(getCoffee)
+    return res.json(getCoffee);
+
+  }).catch((err) => {
+    console.log('Error getting documents', err);
+  });
 });
 
+/*
+router.post("/testPost", (req, res) => {
+  // used when sending to db
+  const docRef = db.collection("coffee").doc();  
+  
+  // create object and sends to database collection coffee
+  docRef.set({title: "new test from post"});
+
+});
+*/
+// last
 module.exports = router
