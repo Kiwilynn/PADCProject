@@ -10,16 +10,13 @@ import Foundation
 
 class Order{
     
-    var orderId: String
+    var orderId: String?
     var productQty: Int?
-    var date: datum
-    var time: timeb
+    var date: datum?
+    var time: timeb?
     var totalAmount: Double?
     
-    init(orderId: String, date: datum, time: timeb) {
-        self.orderId = orderId
-        self.date = date
-        self.time = time
+    init() {
         
     }
     
@@ -30,6 +27,7 @@ class Order{
     //append
     func add(product item: Product) {
         self.items.append(item)
+        print(item.name)
     }
     
     //remove
@@ -37,6 +35,7 @@ class Order{
         for (i, itemx) in items.enumerated(){
             if itemx.id == item.id {
                 items.remove(at: i)
+                print(itemx)
             }
         }
     }

@@ -14,6 +14,7 @@ class ViewControllerMenuForShop: UIViewController{
     
     var collectionID: String?
     
+    
     override func viewDidLoad() {
         super.viewDidLoad()
     
@@ -26,11 +27,11 @@ class ViewControllerMenuForShop: UIViewController{
             ProductRepo.startListener(id: id){ () -> () in
                 self.tableView.reloadData()
                 
-                
             }
         }
     }
 
+  
 }
 
 extension ViewControllerMenuForShop: UITableViewDelegate, UITableViewDataSource{
@@ -45,6 +46,9 @@ extension ViewControllerMenuForShop: UITableViewDelegate, UITableViewDataSource{
         cell.textLabel?.text = ProductRepo.productList[indexPath.row].name
         
         return cell
+        
+    
+
     }
     
     
