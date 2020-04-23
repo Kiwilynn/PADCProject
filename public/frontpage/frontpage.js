@@ -13,10 +13,21 @@ $(document).ready( () =>{
             //console.log(data)
             //console.log(i);
             // is how we arrange the data and show it to the frontpage
-            $(`<div id = order_box>
-                Customer:   ${data[i].customer}<br>
-                Date:       ${data[i].date}<br>
-                Total:      ${data[i].total}</div>`
+            $(`<table id = order_table>
+                <tr>
+                    <th>Customer</th>
+                    <th>Date</th>
+                    <th>Total</th>
+                    <th>Order</th>
+                </tr>
+                <tr>
+                    <td>${data[i].customer}</td>
+                    <td>${data[i].date}</td>
+                    <td>${data[i].total}</td>
+                    <td>${data[i].order}</td>
+                </tr>
+                </table>`
+                
             ).appendTo("#frontpage_box");        
             // counts 1 up for each loop 
             i++;

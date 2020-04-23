@@ -1,16 +1,33 @@
 body {
-    text-align: center;
+    font-family: arial, sans-serif;
+    background-color: #88d498;
 }
 
-#order_box{
-
-    background-color: lightgrey;
-    width: 10%;
-    border: 1px solid gray;
-    padding: 5%;
+#order_table {  
+    margin-top: 1%;
+    border-collapse: collapse;
+    width: 60%;
     margin-left: auto;
     margin-right: auto;
-    margin-bottom: 2%;
-    text-align: left;
+    box-shadow: 1px 2px 4px rgba(0, 0, 0, .5);
 
 }
+
+#frontpage_box {
+    margin-top: 5%;
+}
+
+
+td, th {
+    border: 1px solid #dddddd;
+    text-align: left;
+    padding: 8px;
+  }
+  
+  tr:nth-child(even) {
+    background-color: #c6dabf;
+  }
+
+  tr:nth-child(odd) {
+    background-color: #1a936f;
+  }
