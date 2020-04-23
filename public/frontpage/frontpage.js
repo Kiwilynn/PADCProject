@@ -1,21 +1,26 @@
+// check if the js works
 console.log("frontpage.js works");
 
+//waits for the html doc to be ready before atempting to run any js.
 $(document).ready( () =>{
 
+    // jquery getting our json order data from firebase
     $.get("http://localhost:8888/testGet", (data) => {    
+        // i is for the index of the array of orders
         let i = 0;    
+        //for each loop through our array list
         $.each(data, function () {
-            console.log(data)
-      
-        console.log(i);
-        $(`<div id = order_box>
-            Customer:   ${data[i].customer}<br>
-            Date:       ${data[i].date}<br>
-            Total:      ${data[i].total}</div>`
-        ).appendTo("#frontpage_box");        
-        i++;
-
-        console.log(i);
+            //console.log(data)
+            //console.log(i);
+            // is how we arrange the data and show it to the frontpage
+            $(`<div id = order_box>
+                Customer:   ${data[i].customer}<br>
+                Date:       ${data[i].date}<br>
+                Total:      ${data[i].total}</div>`
+            ).appendTo("#frontpage_box");        
+            // counts 1 up for each loop 
+            i++;
+            //console.log(i);
         
         });
     });
@@ -33,18 +38,7 @@ $(document).ready( () =>{
         { id: "4", customer: "Mikkel", date: time, total: 300 },
         { id: "5", customer: "Oliver", date: time, total: 300 },
     ];
-    
-    // Jquery for each function 
-    $.each(orders, function () {
-        
-        $(`<div id = order_box>
-            Id:         ${this.id}<br>
-            Customer:   ${this.customer}<br>
-            Date:       ${this.date}<br>
-            Total:      ${this.total}</div>`
-        ).appendTo("#frontpage_box");        
-    });
-*/
+*/    
 
 });
 
