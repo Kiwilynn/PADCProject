@@ -126,8 +126,11 @@ class ViewControllerWithMap: UIViewController {
     func updateMarkersOnMap(){
         
         // creates a list of markers
-        //var markers = [MKPointAnnotation]()
+        var markers = [MKPointAnnotation]()
+        /* FOR CUSTOM ANNOTATION
         var markers = [CoffeeShopAnnotation]()
+        */
+ 
         // adds all the markers from the new list of coffeeshops
         for coffeeShop in CoffeeShopRepo.coffeeShopList{
             markers.append(coffeeShop.marker)
@@ -173,7 +176,13 @@ extension ViewControllerWithMap: MKMapViewDelegate{
         if annotationView == nil{
             annotationView = MKMarkerAnnotationView(annotation: annotation, reuseIdentifier: identifier)
             
+            annotationView?.canShowCallout = true
+            annotationView?.rightCalloutAccessoryView = UIButton(type: .detailDisclosure) // Details button for annotation
+
+
+            /* FOR CUSTOM ANNOTATION
             annotationView?.canShowCallout = false
+            */
             
         // if there is one available we reuse it and fills it with data
         }else{
@@ -182,6 +191,7 @@ extension ViewControllerWithMap: MKMapViewDelegate{
         
         // returns the styled annotation
         return annotationView
+        
         
         /*
         // We use a guard statement to check if the annotation is a user location
@@ -213,6 +223,7 @@ extension ViewControllerWithMap: MKMapViewDelegate{
     func mapView(_ mapView: MKMapView, didSelect view: MKAnnotationView) {
         selectedMarker = view.annotation as? MKPointAnnotation // used for segue
         
+        /* FOR CUSTOM ANNOTATION
         // We use a guard statement to check if the annotation is a user location
         // if the annotation is a user location it shall return nil, or else proceed
         guard !(view.annotation is MKUserLocation) else { return }
@@ -228,17 +239,18 @@ extension ViewControllerWithMap: MKMapViewDelegate{
         calloutView.center = CGPoint(x: view.bounds.size.width / 2, y: -calloutView.bounds.size.height*0.52)
         view.addSubview(calloutView)
         map.setCenter((view.annotation?.coordinate)!, animated: true)
-        
+        */
         
     }
     
+    /* FOR CUSTOM ANNOTATION
     func mapView(_ mapView: MKMapView, didDeselect view: MKAnnotationView) {
         if view.isKind(of: AnnotationView.self){
             for subview in view.subviews{
                 subview.removeFromSuperview()
             }
         }
-    }
+    }*/
     
     // This function is called when you press the button on an annotation
     func mapView(_ mapView: MKMapView, annotationView view: MKAnnotationView, calloutAccessoryControlTapped control: UIControl) {

@@ -8,5 +8,6 @@ target 'CoffeeAppForUser' do
   # Pods for CoffeeAppForUser
 pod 'Firebase/Firestore'
 pod 'Firebase/Storage'
+pod 'Firebase/Auth'
 
 end

@@ -21,7 +21,9 @@
 		4C2330122448523100B279D8 /* CustomAnnotationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C2330112448523100B279D8 /* CustomAnnotationView.swift */; };
 		4C2330142448542300B279D8 /* CoffeeShopAnnotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C2330132448542300B279D8 /* CoffeeShopAnnotation.swift */; };
 		4C2330162448555800B279D8 /* AnnotationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C2330152448555800B279D8 /* AnnotationView.swift */; };
-		4C23301E2451862300B279D8 /* ViewControllerProfile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C23301D2451862300B279D8 /* ViewControllerProfile.swift */; };
+		4C23301E2451862300B279D8 /* ViewControllerLogin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C23301D2451862300B279D8 /* ViewControllerLogin.swift */; };
+		4C2330212451898800B279D8 /* AuthorizationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C2330202451898800B279D8 /* AuthorizationManager.swift */; };
+		4C2330232451987D00B279D8 /* ViewControllerProfile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C2330222451987D00B279D8 /* ViewControllerProfile.swift */; };
 		4C38A2362445BEB1004E50CB /* CoffeeShop.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C38A2352445BEB1004E50CB /* CoffeeShop.swift */; };
 		4C38A2382445BF85004E50CB /* CoffeeShopRepo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C38A2372445BF85004E50CB /* CoffeeShopRepo.swift */; };
 		4C38A23A2445EE5D004E50CB /* ViewControllerMenuForShop.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C38A2392445EE5D004E50CB /* ViewControllerMenuForShop.swift */; };
@@ -49,7 +51,9 @@
 		4C2330112448523100B279D8 /* CustomAnnotationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomAnnotationView.swift; sourceTree = "<group>"; };
 		4C2330132448542300B279D8 /* CoffeeShopAnnotation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoffeeShopAnnotation.swift; sourceTree = "<group>"; };
 		4C2330152448555800B279D8 /* AnnotationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnnotationView.swift; sourceTree = "<group>"; };
-		4C23301D2451862300B279D8 /* ViewControllerProfile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllerProfile.swift; sourceTree = "<group>"; };
+		4C23301D2451862300B279D8 /* ViewControllerLogin.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllerLogin.swift; sourceTree = "<group>"; };
+		4C2330202451898800B279D8 /* AuthorizationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthorizationManager.swift; sourceTree = "<group>"; };
+		4C2330222451987D00B279D8 /* ViewControllerProfile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllerProfile.swift; sourceTree = "<group>"; };
 		4C38A2352445BEB1004E50CB /* CoffeeShop.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoffeeShop.swift; sourceTree = "<group>"; };
 		4C38A2372445BF85004E50CB /* CoffeeShopRepo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoffeeShopRepo.swift; sourceTree = "<group>"; };
 		4C38A2392445EE5D004E50CB /* ViewControllerMenuForShop.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllerMenuForShop.swift; sourceTree = "<group>"; };
@@ -93,6 +97,7 @@
 		4C05F7B0243F241A00EAD78C /* CoffeeAppForUser */ = {
 			isa = PBXGroup;
 			children = (
+				4C23301F2451896600B279D8 /* Authentication */,
 				4C233010244851EE00B279D8 /* CustomAnnotation */,
 				4C7E30352445BA66004E56CB /* ViewController */,
 				4C05F7C8243F256300EAD78C /* Repository */,
@@ -140,13 +145,22 @@
 			path = CustomAnnotation;
 			sourceTree = "<group>";
 		};
+		4C23301F2451896600B279D8 /* Authentication */ = {
+			isa = PBXGroup;
+			children = (
+				4C2330202451898800B279D8 /* AuthorizationManager.swift */,
+			);
+			path = Authentication;
+			sourceTree = "<group>";
+		};
 		4C7E30352445BA66004E56CB /* ViewController */ = {
 			isa = PBXGroup;
 			children = (
 				4C05F7B5243F241A00EAD78C /* ViewController.swift */,
 				4C7E30332445BA5E004E56CB /* ViewControllerWithMap.swift */,
 				4C38A2392445EE5D004E50CB /* ViewControllerMenuForShop.swift */,
-				4C23301D2451862300B279D8 /* ViewControllerProfile.swift */,
+				4C2330222451987D00B279D8 /* ViewControllerProfile.swift */,
+				4C23301D2451862300B279D8 /* ViewControllerLogin.swift */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -291,7 +305,9 @@
 				4C05F7B6243F241A00EAD78C /* ViewController.swift in Sources */,
 				4C38A23A2445EE5D004E50CB /* ViewControllerMenuForShop.swift in Sources */,
 				4C38A2362445BEB1004E50CB /* CoffeeShop.swift in Sources */,
-				4C23301E2451862300B279D8 /* ViewControllerProfile.swift in Sources */,
+				4C2330212451898800B279D8 /* AuthorizationManager.swift in Sources */,
+				4C23301E2451862300B279D8 /* ViewControllerLogin.swift in Sources */,
+				4C2330232451987D00B279D8 /* ViewControllerProfile.swift in Sources */,
 				4C2330142448542300B279D8 /* CoffeeShopAnnotation.swift in Sources */,
 				4C2330162448555800B279D8 /* AnnotationView.swift in Sources */,
 				0512392024464275008B8F99 /* Order.swift in Sources */,

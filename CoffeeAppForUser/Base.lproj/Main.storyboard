@@ -89,18 +89,69 @@
         <!--Profile-->
         <scene sceneID="lPn-H8-XdT">
             <objects>
-                <viewController id="SKb-oi-eBU" customClass="ViewControllerProfile" customModule="CoffeeAppForUser" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="logIn" id="SKb-oi-eBU" customClass="ViewControllerLogIn" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Wm3-Mr-s7W">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="qF6-pS-XOD">
+                                <rect key="frame" x="0.0" y="531" width="414" height="365"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <subviews>
+                                    <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Email" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Leh-Cz-kZw">
+                                        <rect key="frame" x="134" y="54" width="146" height="34"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                    <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="iG2-qR-lJh">
+                                        <rect key="frame" x="134" y="111" width="146" height="34"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Kiq-aN-4x5">
+                                        <rect key="frame" x="233" y="167" width="47" height="30"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <state key="normal" title="Sign in"/>
+                                        <connections>
+                                            <action selector="signInButtonPressed:" destination="SKb-oi-eBU" eventType="touchUpInside" id="eXa-K4-Tp6"/>
+                                            <action selector="signInPressed:" destination="SKb-oi-eBU" eventType="touchUpInside" id="VTT-cQ-TJN"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="displayP3"/>
                         <viewLayoutGuide key="safeArea" id="cdL-yj-Dyf"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Profile" image="person.fill" catalog="system" id="sRJ-fx-sLX"/>
+                    <connections>
+                        <outlet property="emailField" destination="Leh-Cz-kZw" id="dCX-qf-8O7"/>
+                        <outlet property="passwordField" destination="iG2-qR-lJh" id="bxw-gP-ytN"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="j9x-Fn-V84" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2583" y="682"/>
+            <point key="canvasLocation" x="3395.652173913044" y="683.70535714285711"/>
+        </scene>
+        <!--Profile-->
+        <scene sceneID="Fiy-L3-dco">
+            <objects>
+                <viewController id="kxA-WC-aRE" customClass="ViewControllerProfile" customModule="CoffeeAppForUser" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Z6y-dh-YfW">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="psS-mq-7ar"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Profile" image="person.fill" catalog="system" id="3W5-z7-H9A"/>
+                    <navigationItem key="navigationItem" id="wYL-ct-WeN"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="8xX-JK-VDG" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2583" y="684"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="8Hz-4R-raM">
@@ -108,12 +159,13 @@
                 <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="rpJ-eK-xDw" sceneMemberID="viewController">
                     <toolbarItems/>
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="15R-xn-wsq">
+                        <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </tabBar>
                     <connections>
                         <segue destination="HDs-ga-rUT" kind="relationship" relationship="viewControllers" id="9MD-Pf-3f1"/>
-                        <segue destination="SKb-oi-eBU" kind="relationship" relationship="viewControllers" id="ioC-nq-hmJ"/>
+                        <segue destination="kxA-WC-aRE" kind="relationship" relationship="viewControllers" id="QjV-8S-sy7"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="G1d-05-gkW" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
