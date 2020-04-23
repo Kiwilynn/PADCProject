@@ -6,6 +6,7 @@ $(document).ready( () =>{
 
     // jquery getting our json order data from firebase
     $.get("http://localhost:8888/testGet", (data) => {    
+        
         // i is for the index of the array of orders
         let i = 0;    
         //for each loop through our array list
@@ -13,45 +14,35 @@ $(document).ready( () =>{
             //console.log(data)
             //console.log(i);
             // is how we arrange the data and show it to the frontpage
-            $(`<table id = order_table>
-                <tr>
-                    <th>Customer</th>
-                    <th>Date</th>
-                    <th>Total</th>
-                    <th>Order</th>
-                </tr>
-                <tr>
-                    <td>${data[i].customer}</td>
-                    <td>${data[i].date}</td>
-                    <td>${data[i].total} Kr.</td>
-                    <td>${data[i].order}</td>
-                </tr>
+            $(`<table id = order_table_layout>
+                    <tr>
+                        <th>Customer</th>
+                        <th>Date</th>
+                        <th>Total</th>
+                        <th>Order</th>
+                        <th>Order Status</th>
+                    </tr>
+                    <tr>
+                        <td>${data[i].customer}</td>
+                        <td>${data[i].date}</td>
+                        <td>${data[i].total} Kr.</td>
+                        <td>${data[i].order}</td>
+                        <td>
+                            <input type="button" onclick="${$("#frontpage_ready_ordertable").append(data[i])}" value="Ready"/>
+                            <input type="button" onclick="insert(this)" value="Cancel"/>
+                        </td>
+                    </tr>
                 </table>`
-                
-            ).appendTo("#frontpage_box");        
+            
+            ).appendTo("#frontpage_new_ordertable");        
             // counts 1 up for each loop 
             i++;
             //console.log(i);
-        
         });
     });
 
-/*
-    // dummy current day/moth/year
-    const date = new Date();
-    let time = date.toDateString()
 
-    //dummy data list of orders
-    let orders = [
-        { id: "1", customer: "Mads", date: time, total: 100 },
-        { id: "2", customer: "Emil", date: time, total: 80 },
-        { id: "3", customer: "Mie", date: time, total: 180 },
-        { id: "4", customer: "Mikkel", date: time, total: 300 },
-        { id: "5", customer: "Oliver", date: time, total: 300 },
-    ];
-*/    
+
 
 });
-
-
 
