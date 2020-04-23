@@ -23,7 +23,7 @@ $(document).ready( () =>{
                 <tr>
                     <td>${data[i].customer}</td>
                     <td>${data[i].date}</td>
-                    <td>${data[i].total}</td>
+                    <td>${data[i].total} Kr.</td>
                     <td>${data[i].order}</td>
                 </tr>
                 </table>`
