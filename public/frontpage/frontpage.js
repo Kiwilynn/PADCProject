@@ -6,16 +6,18 @@ $(document).ready( () =>{
         let i = 0;    
         $.each(data, function () {
             console.log(data)
-        });
-
+      
         console.log(i);
         $(`<div id = order_box>
             Customer:   ${data[i].customer}<br>
-            Date:       ${data.date}<br>
-            Total:      ${data.total}</div>`
+            Date:       ${data[i].date}<br>
+            Total:      ${data[i].total}</div>`
         ).appendTo("#frontpage_box");        
         i++;
 
+        console.log(i);
+        
+        });
     });
 
 /*
