@@ -40,7 +40,7 @@ class AuthorizationManager{
                 print("signed up succesfully")
                 print(authResult?.user.email)
                 
-                self.parentVC.performSegue(withIdentifier: "personalSegue", sender: nil)
+                //self.parentVC.performSegue(withIdentifier: "personalSegue", sender: nil)
             }else{
                 print("Error: \(error.debugDescription)")
             }
@@ -55,10 +55,18 @@ class AuthorizationManager{
             if error == nil{
                 print("SUCCES")
                 
-                self.parentVC.performSegue(withIdentifier: "personalSegue", sender: nil)
+                self.parentVC.dismiss(animated: true, completion: nil)
             }else{
                 print("Failed")
             }
+        }
+    }
+    
+    func signOut(){
+        do {
+            try auth.signOut()
+        } catch let error {
+            print("Failed: \(error.localizedDescription)")
         }
     }
 }

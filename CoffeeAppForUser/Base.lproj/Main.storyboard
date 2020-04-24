@@ -89,33 +89,32 @@
         <!--Profile-->
         <scene sceneID="lPn-H8-XdT">
             <objects>
-                <viewController storyboardIdentifier="logIn" id="SKb-oi-eBU" customClass="ViewControllerLogIn" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="signIn" id="SKb-oi-eBU" customClass="ViewControllerSignIn" customModule="CoffeeAppForUser" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Wm3-Mr-s7W">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="qF6-pS-XOD">
-                                <rect key="frame" x="0.0" y="531" width="414" height="365"/>
+                                <rect key="frame" x="82" y="323" width="250" height="250"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <subviews>
                                     <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Email" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Leh-Cz-kZw">
-                                        <rect key="frame" x="134" y="54" width="146" height="34"/>
+                                        <rect key="frame" x="52" y="54" width="146" height="34"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
                                     <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="iG2-qR-lJh">
-                                        <rect key="frame" x="134" y="111" width="146" height="34"/>
+                                        <rect key="frame" x="52" y="111" width="146" height="34"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
                                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Kiq-aN-4x5">
-                                        <rect key="frame" x="233" y="167" width="47" height="30"/>
+                                        <rect key="frame" x="151" y="167" width="47" height="30"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <state key="normal" title="Sign in"/>
                                         <connections>
-                                            <action selector="signInButtonPressed:" destination="SKb-oi-eBU" eventType="touchUpInside" id="eXa-K4-Tp6"/>
                                             <action selector="signInPressed:" destination="SKb-oi-eBU" eventType="touchUpInside" id="VTT-cQ-TJN"/>
                                         </connections>
                                     </button>
@@ -143,7 +142,18 @@
                     <view key="view" contentMode="scaleToFill" id="Z6y-dh-YfW">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lfV-bz-Pdp">
+                                <rect key="frame" x="260" y="76" width="117" height="52"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="33"/>
+                                <state key="normal" title="Sign out"/>
+                                <connections>
+                                    <action selector="signOutPressed:" destination="kxA-WC-aRE" eventType="touchUpInside" id="RFK-H3-2KE"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemYellowColor" red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <viewLayoutGuide key="safeArea" id="psS-mq-7ar"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Profile" image="person.fill" catalog="system" id="3W5-z7-H9A"/>

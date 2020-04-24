@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ViewControllerLogin: UIViewController {
+class ViewControllerSignIn: UIViewController {
 
     @IBOutlet weak var emailField: UITextField!
     @IBOutlet weak var passwordField: UITextField!
@@ -26,6 +26,9 @@ class ViewControllerLogin: UIViewController {
     }
     
     @IBAction func signInPressed(_ sender: Any) {
+        if let email = emailField.text, let password = passwordField.text{
+            authManager.signIn(email: email, password: password)
+        }
         
     }
     
