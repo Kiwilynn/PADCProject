@@ -27,6 +27,22 @@ router.get("/testGet", (req, res) => {
   });
 });
 
+//Route for getting products/items displayed
+router.get("/products", (req, res) => {    
+  // For loop goes through the collection list and displays them all. 
+  db.collection('product').get().then((snapshot) => {
+    let getProduct = snapshot.docs.map((doc) => {
+      return doc.data();
+    });
+    console.log(getProduct)
+    return res.json(getProduct);
+
+  }).catch((err) => {
+    console.log('Error getting documents', err);
+  });
+});
+
+
 /*
 router.post("/testPost", (req, res) => {
   // used when sending to db

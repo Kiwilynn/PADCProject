@@ -19,18 +19,22 @@
     </div>
 
     <div id="itemTable">
-        <p id="Items"></p>
     
-        <p >Name: <input type="text" id="name"></input></p>
-        <p >Price: <input type="text" id="price"></input></p>
+        <form id="itemForm">
+            <h1>Items</h1>
+              <!-- Section 1 -->
+              <label class="" for="name">Name:</label>
+              <input type="text" name="name" value="" id="name" required />
+        
+              <label class="" for="price">Price :</label>
+              <input type="text" name="price" value="" id="price" required />
+            
 
-        <br>
-
-        <button id="addItem-button">Add item!</button>
-    
+              <button type="submit">Register item</button>
+          </form>
     </div>
     
-
+    <script src="https://www.gstatic.com/firebasejs/5.10.0/firebase.js"></script>
     <script src="./itemPage.js"></script>
 
 </body>
