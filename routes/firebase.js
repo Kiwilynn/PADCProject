@@ -16,16 +16,38 @@ const db = admin.firestore();
 router.get("/testGet", (req, res) => {    
   // For loop goes through the collection list and displays them all. 
   db.collection('orders').get().then((snapshot) => {
-    let getCoffee = snapshot.docs.map((doc) => {
+    let getOrder = snapshot.docs.map((doc) => {
       return doc.data();
     });
-    console.log(getCoffee)
-    return res.json(getCoffee);
+    console.log(getOrder);
+   
+    let getId = snapshot.docs.map((doc) => {
+      return doc.id;
+    });
+
+    
+    db.collection("orders/" + getId[0] + "/products").get().then((snapshot) => {
+
+      let getProductDoc = snapshot.docs.map((doc) => {
+        return doc.data();
+      });
+      console.log(getProductDoc);
+    });
+    
+    
+    //return res.json(getOrder);
 
   }).catch((err) => {
     console.log('Error getting documents', err);
   });
 });
+
+
+
+
+
+
+
 
 //Route for getting products/items displayed
 router.get("/products", (req, res) => {    
@@ -36,18 +58,6 @@ router.get("/products", (req, res) => {
     });
     console.log(getProduct)
     return res.json(getProduct);
-
-    /*
-    db.collection("orders/" + getDoc.id + "/products").get().then((snapshot) => {
-
-      let getProductDoc = snapshot.docs.map((doc) => {
-        return doc.data();
-      });
-      console.log(getProductDoc);
-    });
-    */
-
-
 
   }).catch((err) => {
     console.log('Error getting documents', err);
