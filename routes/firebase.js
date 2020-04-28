@@ -37,6 +37,18 @@ router.get("/products", (req, res) => {
     console.log(getProduct)
     return res.json(getProduct);
 
+    /*
+    db.collection("orders/" + getDoc.id + "/products").get().then((snapshot) => {
+
+      let getProductDoc = snapshot.docs.map((doc) => {
+        return doc.data();
+      });
+      console.log(getProductDoc);
+    });
+    */
+
+
+
   }).catch((err) => {
     console.log('Error getting documents', err);
   });
